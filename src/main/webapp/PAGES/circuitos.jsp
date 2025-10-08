@@ -30,13 +30,11 @@
     </div>
 
     <nav class="main-nav" aria-label="Secciones principales">
-      <a href="../index.html" class="nav-link is-active">Dashboard</a>
-      <a href="#calendar" class="nav-link">Calendario</a>
-      <a href="../PAGES/drivers.html" class="nav-link">Pilotos</a>
-      <a href="../PAGES/constructors.html" class="nav-link">Constructores</a>
-      <a href="../PAGES/circuits.html" class="nav-link">Circuito</a>
-      <a href="../PAGES/standings.html" class="nav-link">Rankings</a>
-      <a href="" class="nav-link">Estadísticas</a>
+      <a href="../index2.jsp" class="nav-link">Dashboard</a>
+      <a href="./pilotos.jsp" class="nav-link">Pilotos</a>
+      <a href="./escuderias.jsp" class="nav-link">Escuderías</a>
+      <a href="./circuitos.jsp" class="nav-link is-active">Circuitos</a>
+      <a href="./historial-carreras.jsp" class="nav-link">Historial de carreras</a>
     </nav>
     <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema">🌓</button>
   </header>

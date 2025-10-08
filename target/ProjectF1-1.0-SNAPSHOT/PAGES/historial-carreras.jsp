@@ -29,13 +29,12 @@
       </div>
     </div>
 
-    <nav class="main-nav" aria-label="Secciones">
-      <a href="index.html" class="nav-link">Dashboard</a>
-      <a href="drivers.html" class="nav-link">Pilotos</a>
-      <a href="constructors.html" class="nav-link">Constructores</a>
-      <a href="circuits.html" class="nav-link">Circuitos</a>
-      <a href="standings.html" class="nav-link">Rankings</a>
-      <a href="consultas.html" class="nav-link is-active">Consultas 2025</a>
+    <nav class="main-nav" aria-label="Secciones principales">
+      <a href="../index2.jsp" class="nav-link">Dashboard</a>
+      <a href="./pilotos.jsp" class="nav-link">Pilotos</a>
+      <a href="./escuderias.jsp" class="nav-link">Escuderías</a>
+      <a href="./circuitos.jsp" class="nav-link">Circuitos</a>
+      <a href="./historial-carreras.jsp" class="nav-link is-active">Historial de carreras</a>
     </nav>
 
     <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema">🌓</button>
