@@ -6,7 +6,17 @@ document.addEventListener("DOMContentLoaded", async () => {
   bindEvents();
 });
 
-// Consultar info de los pilotos
+/* ====== Estado de los campos de filtrado ====== */
+const state = {
+  q: "",
+  season: "2024",
+  team: "all",
+  nationality: "all",
+  minWins: 0,
+  sortBy: "points_desc",
+};
+
+/* ====== Consultar info de los pilotos ====== */
 async function getDrivers() {
   const url = "http://localhost:8080/ProjectF1/PilotosController";
   const resp = await fetch(url);
@@ -47,16 +57,6 @@ function toCSV(rows) {
 
   return lines.join("\n");
 }
-
-/* ====== Estado de UI ====== */
-const state = {
-  q: "",
-  season: "2024",
-  team: "all",
-  nationality: "all",
-  minWins: 0,
-  sortBy: "points_desc",
-};
 
 /* ====== Inicialización de selects ====== */
 async function initFilters() {
@@ -120,7 +120,7 @@ async function getFiltered() {
   return rows;
 }
 
-/* ====== Render lista ====== */
+/* ====== Renderizar la tabla ====== */
 async function renderList() {
   const rows = await getFiltered();
 
@@ -152,7 +152,7 @@ async function renderList() {
   });
 }
 
-/* ====== Detalle ====== */
+/* ====== Mostrar el detalle ====== */
 async function openDetail(code, season) {
   const d = await byIdSeason(code, Number(season));
 
@@ -182,7 +182,6 @@ function closeDetail() {
   }
 }
 
-/* ====== Export ====== */
 async function exportCSV() {
   const rows = await getFiltered();
 
@@ -222,7 +221,7 @@ function toggleTheme() {
   localStorage.setItem("theme", document.body.classList.contains("light") ? "light" : "dark");
 }
 
-/* ====== Eventos ====== */
+/* ========= Manejador de eventos ========= */
 function bindEvents() {
   $("#q").addEventListener("input", (e) => {
     state.q = e.target.value;
@@ -258,7 +257,7 @@ function bindEvents() {
     state.minWins = 0;
     state.sortBy = "points_desc";
     $("#q").value = "";
-    $("#season").value = "all";
+    $("#season").value = "2024";
     $("#team").value = "all";
     $("#minWins").value = 0;
     $("#minWinsOut").textContent = "0";

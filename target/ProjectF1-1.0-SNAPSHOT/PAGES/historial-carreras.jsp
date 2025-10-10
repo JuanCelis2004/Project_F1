@@ -35,11 +35,10 @@
     </div>
 
     <nav class="main-nav" aria-label="Secciones principales">
-      <a href="../index2.jsp" class="nav-link">Dashboard</a>
+      <a href="../index.jsp" class="nav-link">Dashboard</a>
       <a href="./pilotos.jsp" class="nav-link">Pilotos</a>
       <a href="./escuderias.jsp" class="nav-link">Escuderías</a>
       <a href="./circuitos.jsp" class="nav-link">Circuitos</a>
-      <!-- <a href="./carreras.jsp" class="nav-link">Carreras</a> -->
       <a href="./posicionConstructor.jsp" class="nav-link">Posicion constructor</a>
       <a href="./historial-carreras.jsp" class="nav-link is-active">Historial de carreras</a>
     </nav>
@@ -51,6 +50,15 @@
     <!-- Filtros -->
     <section class="filters">
       <div class="filters-grid">
+        <label class="field">
+          <span>Temporada</span>
+          <select id="season">
+            <option value="all">2024 y 2025</option>
+            <option value="2024" selected>2024</option>
+            <option value="2025">2025</option>
+          </select>
+        </label>
+
         <label class="field">
           <span>Carrera</span>
           <select id="fRace">
@@ -160,7 +168,7 @@
 
   <!-- Chart.js CDN (para las gráficas) -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-  <script src="../JS/consultas.js"></script>
+  <script src="../JS/historialCarreras.js"></script>
 </body>
 
 </html>

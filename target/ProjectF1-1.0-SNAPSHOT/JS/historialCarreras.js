@@ -68,6 +68,7 @@ function formatRowsForCSV(rows) {
 
 /* ========= Estado ========= */
 const state = {
+  season: "2024",
   race: "all",
   driver: "all",
   team: "all",
@@ -121,6 +122,10 @@ async function getFilteredRows() {
   const dataHistorialCarreras = await getHistorialCarreras();
   let rows = dataHistorialCarreras.slice().filter((r) => r.posicion !== null);
 
+  if (state.season !== "all") {
+    rows = rows.filter((r) => String(r.carrera.temporada.anio) === state.season);
+  }
+
   if (state.race !== "all") {
     rows = rows.filter((r) => r.carrera.circuito.nombre === state.race);
   }
@@ -170,16 +175,16 @@ async function renderTable() {
   rows.forEach((r) => {
     const tr = document.createElement("tr");
     tr.innerHTML = `
-      <td>${r.piloto.temporada.anio}</td>
+      <td>${r.carrera.temporada.anio}</td>
       <td>${r.carrera.circuito.nombre}</td>
       <td>${r.posicion ?? "—"}</td>
       <td>${r.posicionParrillaSalida}</td>
       <td>${r.piloto.nombre}</td>
       <td>${r.piloto.escuderia.nombre}</td>
       <td>${r.puntos}</td>
-        <td>${r.vueltas}</td>
-        <td>${r.tiempoCarrera}</td>
-        <td>${r.mejorTiempo}</td>
+      <td>${r.vueltas}</td>
+      <td>${r.tiempoCarrera}</td>
+      <td>${r.mejorTiempo}</td>
     `;
     tb.appendChild(tr);
   });
@@ -373,6 +378,12 @@ function bindEvents() {
     localStorage.setItem("theme", document.body.classList.contains("light") ? "light" : "dark");
   });
 
+  $("#season").addEventListener("change", (e) => {
+    state.season = e.target.value;
+    renderTable();
+    renderCharts();
+  });
+
   $("#fRace").addEventListener("change", (e) => {
     state.race = e.target.value;
     renderTable();
@@ -397,12 +408,14 @@ function bindEvents() {
   });
 
   $("#btnReset").addEventListener("click", () => {
+    state.season = "2024";
     state.race = "all";
     state.driver = "all";
     state.team = "all";
     state.sort = "pos_asc";
     $("#fRace").value = "all";
     $("#fDriver").value = "all";
+    $("#season").value = "all";
     $("#fTeam").value = "all";
     $("#fSort").value = "pos_asc";
     renderTable();

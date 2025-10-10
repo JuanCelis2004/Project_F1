@@ -35,11 +35,10 @@
     </div>
 
     <nav class="main-nav" aria-label="Secciones principales">
-      <a href="../index2.jsp" class="nav-link">Dashboard</a>
+      <a href="../index.jsp" class="nav-link">Dashboard</a>
       <a href="./pilotos.jsp" class="nav-link">Pilotos</a>
       <a href="./escuderias.jsp" class="nav-link is-active">Escuderías</a>
       <a href="./circuitos.jsp" class="nav-link">Circuitos</a>
-      <!-- <a href="./carreras.jsp" class="nav-link">Carreras</a> -->
       <a href="./posicionConstructor.jsp" class="nav-link">Posicion constructor</a>
       <a href="./historial-carreras.jsp" class="nav-link">Historial de carreras</a>
     </nav>
@@ -137,7 +136,7 @@
     <small>Hecho con ❤️ • UCompensar</small>
   </footer>
 
-  <script src="../JS/constructors.js"></script>
+  <script src="../JS/escuderias.js"></script>
 </body>
 
 </html>
