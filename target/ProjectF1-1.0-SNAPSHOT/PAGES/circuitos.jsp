@@ -34,8 +34,11 @@
       <a href="./pilotos.jsp" class="nav-link">Pilotos</a>
       <a href="./escuderias.jsp" class="nav-link">Escuderías</a>
       <a href="./circuitos.jsp" class="nav-link is-active">Circuitos</a>
+      <!-- <a href="./carreras.jsp" class="nav-link">Carreras</a> -->
+      <a href="./posicionConstructor.jsp" class="nav-link">Posicion constructor</a>
       <a href="./historial-carreras.jsp" class="nav-link">Historial de carreras</a>
     </nav>
+
     <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema">🌓</button>
   </header>
 
@@ -158,7 +161,7 @@
   </aside>
 
   <footer class="site-footer">
-    <small>Hecho con ❤️ • Datos de ejemplo</small>
+    <small>Hecho con ❤️ • UCompensar</small>
   </footer>
 
   <script src="../JS/circuits.js"></script>

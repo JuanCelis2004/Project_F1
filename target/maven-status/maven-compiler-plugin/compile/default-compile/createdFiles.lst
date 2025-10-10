@@ -20,7 +20,9 @@ Persistence\EscuderiaJpaController.class
 Model\Escuderia_.class
 Model\Carrera_.class
 Model\Carrera.class
+Controller\PositionConstructorController.class
 Model\PosicionConstructor.class
+Controller\EscuderiasController.class
 Model\Circuito_.class
 Model\HistorialCarrera_.class
 Persistence\CarreraJpaController.class

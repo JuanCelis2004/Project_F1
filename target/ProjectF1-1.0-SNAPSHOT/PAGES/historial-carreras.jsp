@@ -34,6 +34,8 @@
       <a href="./pilotos.jsp" class="nav-link">Pilotos</a>
       <a href="./escuderias.jsp" class="nav-link">Escuderías</a>
       <a href="./circuitos.jsp" class="nav-link">Circuitos</a>
+      <!-- <a href="./carreras.jsp" class="nav-link">Carreras</a> -->
+      <a href="./posicionConstructor.jsp" class="nav-link">Posicion constructor</a>
       <a href="./historial-carreras.jsp" class="nav-link is-active">Historial de carreras</a>
     </nav>
 
@@ -124,7 +126,7 @@
   </main>
 
   <footer class="site-footer">
-    <small>Hecho con ❤️ • Datos de ejemplo (2024/2025) • Gráficas con Chart.js</small>
+    <small>Hecho con ❤️ • UCompensar • Gráficas con Chart.js</small>
   </footer>
 
   <!-- Chart.js CDN (para las gráficas) -->

@@ -10,7 +10,6 @@ import Model.Escuderia;
 import Model.HistorialCarrera;
 import Model.Piloto;
 import Model.PosicionConstructor;
-import Model.PosicionConstructor_;
 import Model.Temporada;
 import Persistence.CarreraJpaController;
 import Persistence.CircuitoJpaController;

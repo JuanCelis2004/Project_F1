@@ -38,6 +38,8 @@
       <a href="./PAGES/pilotos.jsp" class="nav-link">Pilotos</a>
       <a href="./PAGES/escuderias.jsp" class="nav-link">Escuderías</a>
       <a href="./PAGES/circuitos.jsp" class="nav-link">Circuitos</a>
+      <!-- <a href="./PAGES/carreras.jsp" class="nav-link">Carreras</a> -->
+      <a href="./PAGES/posicionConstructor.jsp" class="nav-link">Posicion constructor</a>
       <a href="./PAGES/historial-carreras.jsp" class="nav-link">Historial de carreras</a>
     </nav>
 
@@ -141,7 +143,7 @@
   </main>
 
   <footer class="site-footer">
-    <small>Hecho con ❤️ para fans de la F1. Datos de ejemplo para demo.</small>
+    <small>Hecho con ❤️ • UCompensar</small>
   </footer>
 
   <script src="JS/app.js"></script>
