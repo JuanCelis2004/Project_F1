@@ -25,6 +25,7 @@ body {
   background: radial-gradient(1200px 800px at 20% -10%, #16202d 0%, var(--bg) 45%);
 }
 
+
 /* Header */
 .site-header {
   position: sticky;

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 D:\ProyectosU\Project_F1\src\main\java\Controller\EscuderiasController.java
 D:\ProyectosU\Project_F1\src\main\java\Controller\PilotosController.java
 D:\ProyectosU\Project_F1\src\main\java\Controller\PositionConstructorController.java
@@ -19,3 +20,26 @@ D:\ProyectosU\Project_F1\src\main\java\Persistence\HistorialCarreraJpaController
 D:\ProyectosU\Project_F1\src\main\java\Persistence\PilotoJpaController.java
 D:\ProyectosU\Project_F1\src\main\java\Persistence\PosicionConstructorJpaController.java
 D:\ProyectosU\Project_F1\src\main\java\Persistence\TemporadaJpaController.java
+=======
+C:\Users\juand\OneDrive\Documentos\NetBeansProjects\ProjectF1\src\main\java\Controller\CircuitoController.java
+C:\Users\juand\OneDrive\Documentos\NetBeansProjects\ProjectF1\src\main\java\Controller\HistorialCarrerasController.java
+C:\Users\juand\OneDrive\Documentos\NetBeansProjects\ProjectF1\src\main\java\Controller\PilotosController.java
+C:\Users\juand\OneDrive\Documentos\NetBeansProjects\ProjectF1\src\main\java\Controller\TemporadaController.java
+C:\Users\juand\OneDrive\Documentos\NetBeansProjects\ProjectF1\src\main\java\Model\Carrera.java
+C:\Users\juand\OneDrive\Documentos\NetBeansProjects\ProjectF1\src\main\java\Model\Circuito.java
+C:\Users\juand\OneDrive\Documentos\NetBeansProjects\ProjectF1\src\main\java\Model\Escuderia.java
+C:\Users\juand\OneDrive\Documentos\NetBeansProjects\ProjectF1\src\main\java\Model\HistorialCarrera.java
+C:\Users\juand\OneDrive\Documentos\NetBeansProjects\ProjectF1\src\main\java\Model\Piloto.java
+C:\Users\juand\OneDrive\Documentos\NetBeansProjects\ProjectF1\src\main\java\Model\PosicionConstructor.java
+C:\Users\juand\OneDrive\Documentos\NetBeansProjects\ProjectF1\src\main\java\Model\Temporada.java
+C:\Users\juand\OneDrive\Documentos\NetBeansProjects\ProjectF1\src\main\java\Persistence\CarreraJpaController.java
+C:\Users\juand\OneDrive\Documentos\NetBeansProjects\ProjectF1\src\main\java\Persistence\CircuitoJpaController.java
+C:\Users\juand\OneDrive\Documentos\NetBeansProjects\ProjectF1\src\main\java\Persistence\EscuderiaJpaController.java
+C:\Users\juand\OneDrive\Documentos\NetBeansProjects\ProjectF1\src\main\java\Persistence\exceptions\IllegalOrphanException.java
+C:\Users\juand\OneDrive\Documentos\NetBeansProjects\ProjectF1\src\main\java\Persistence\exceptions\NonexistentEntityException.java
+C:\Users\juand\OneDrive\Documentos\NetBeansProjects\ProjectF1\src\main\java\Persistence\exceptions\PreexistingEntityException.java
+C:\Users\juand\OneDrive\Documentos\NetBeansProjects\ProjectF1\src\main\java\Persistence\HistorialCarreraJpaController.java
+C:\Users\juand\OneDrive\Documentos\NetBeansProjects\ProjectF1\src\main\java\Persistence\PilotoJpaController.java
+C:\Users\juand\OneDrive\Documentos\NetBeansProjects\ProjectF1\src\main\java\Persistence\PosicionConstructorJpaController.java
+C:\Users\juand\OneDrive\Documentos\NetBeansProjects\ProjectF1\src\main\java\Persistence\TemporadaJpaController.java
+>>>>>>> 9c08ae027554ed165e3ec85e117002d4969bfddf

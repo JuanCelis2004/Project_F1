@@ -7,6 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es-CO">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -17,15 +18,18 @@
 
   <link rel="stylesheet" href="../CSS/circuits.css" />
 </head>
+
 <body>
   <header class="site-header">
     <div class="brand">
       <a class="logo" href="index.html" aria-label="Volver al Dashboard">
-        <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M6 40h26l8-16h18l-8 16h-8l-8 16H8z"/></svg>
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M6 40h26l8-16h18l-8 16h-8l-8 16H8z" />
+        </svg>
       </a>
       <div class="titles">
         <h1>Circuitos</h1>
-        <p class="subtitle">CU3 – Listar circuitos (tarjeta/tabla + detalle con mapa y posiciones)</p>
+        <p class="subtitle">CU3 – Listar circuitos</p>
       </div>
     </div>
 
@@ -48,12 +52,7 @@
         <input id="q" type="search" placeholder="Buscar por nombre o país..." autocomplete="off" />
       </div>
       <div class="filters-grid">
-        <label class="field">
-          <span>Continente</span>
-          <select id="continent">
-            <option value="all">Todos</option>
-          </select>
-        </label>
+
 
         <label class="field">
           <span>País</span>
@@ -75,7 +74,7 @@
           <select id="sortBy">
             <option value="name_asc">Nombre (A–Z)</option>
             <option value="length_desc">Longitud (desc)</option>
-            <option value="laps_desc">Vueltas (desc)</option>
+            <option value="lat_desc">Latitud (desc)</option>
           </select>
         </label>
 
@@ -97,7 +96,12 @@
       <table id="tableView" class="table hidden">
         <thead>
           <tr>
-            <th>Circuito</th><th>País</th><th>Longitud</th><th>Vueltas</th><th>Primer GP</th><th>Récord</th><th></th>
+            <th>Circuito</th>
+            <th>País</th>
+            <th>Localidad</th>
+            <th>Longitud</th>
+            <th>Latitud</th>
+            <th></th>
           </tr>
         </thead>
         <tbody></tbody>
@@ -108,9 +112,11 @@
   <!-- Panel detalle -->
   <aside id="detailPanel" class="detail">
     <button id="closeDetail" class="detail-close" aria-label="Cerrar">✕</button>
+  
     <div class="detail-body">
       <div class="detail-head">
         <img id="cMap" alt="Mapa del circuito" />
+  
         <div>
           <h3 id="cName">—</h3>
           <p class="meta" id="cSubtitle">—</p>
@@ -141,7 +147,11 @@
         <table class="table" id="tblLast">
           <thead>
             <tr>
-              <th>#</th><th>Piloto</th><th>Constructor</th><th>Puntos</th><th>Fecha</th>
+              <th>#</th>
+              <th>Piloto</th>
+              <th>Constructor</th>
+              <th>Puntos</th>
+              <th>Fecha</th>
             </tr>
           </thead>
           <tbody><!-- JS --></tbody>
@@ -151,7 +161,11 @@
         <table class="table hidden" id="tblRecords">
           <thead>
             <tr>
-              <th>Tipo</th><th>Marca</th><th>Piloto</th><th>Equipo</th><th>Año</th>
+              <th>Tipo</th>
+              <th>Marca</th>
+              <th>Piloto</th>
+              <th>Equipo</th>
+              <th>Año</th>
             </tr>
           </thead>
           <tbody><!-- JS --></tbody>
@@ -166,4 +180,5 @@
 
   <script src="../JS/circuits.js"></script>
 </body>
+
 </html>

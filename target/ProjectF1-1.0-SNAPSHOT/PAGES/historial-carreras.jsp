@@ -7,6 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es-CO">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -17,14 +18,18 @@
 
   <link rel="stylesheet" href="../CSS/consultas.css" />
 </head>
+
 <body>
   <header class="site-header">
     <div class="brand">
       <a class="logo" href="index.html" aria-label="Volver al Dashboard">
-        <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M6 40h26l8-16h18l-8 16h-8l-8 16H8z"/></svg>
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M6 40h26l8-16h18l-8 16h-8l-8 16H8z" />
+        </svg>
       </a>
+
       <div class="titles">
-        <h1>Consultas 2025</h1>
+        <h1>Historial de carreras</h1>
         <p class="subtitle">CU6 – Filtros por carrera, piloto, escudería • Históricos & Predicciones</p>
       </div>
     </div>
@@ -48,16 +53,25 @@
       <div class="filters-grid">
         <label class="field">
           <span>Carrera</span>
-          <select id="fRace"><option value="all">Todas</option></select>
+          <select id="fRace">
+            <option value="all">Todas</option>
+          </select>
         </label>
+
         <label class="field">
           <span>Piloto</span>
-          <select id="fDriver"><option value="all">Todos</option></select>
+          <select id="fDriver">
+            <option value="all">Todos</option>
+          </select>
         </label>
+
         <label class="field">
           <span>Escudería</span>
-          <select id="fTeam"><option value="all">Todas</option></select>
+          <select id="fTeam">
+            <option value="all">Todas</option>
+          </select>
         </label>
+
         <label class="field">
           <span>Ordenar</span>
           <select id="fSort">
@@ -65,19 +79,23 @@
             <option value="points_desc">Puntos (desc)</option>
             <option value="name_asc">Piloto (A–Z)</option>
             <option value="team_asc">Escudería (A–Z)</option>
-            <option value="date_desc">Fecha (reciente primero)</option>
+            <option value="bestTime_asc">Mejor tiempo (asc)</option>
           </select>
         </label>
+
         <div class="field actions">
           <button id="btnReset" class="btn outline">Limpiar</button>
           <button id="btnCSV" class="btn primary">Exportar CSV</button>
         </div>
       </div>
+
+      <!--
       <div class="hint">
         <small>
           Consejo: para ver **predicciones**, selecciona un <b>piloto</b> o una <b>escudería</b>.
           La tablita muestra históricos (2024/2025), las gráficas mezclan histórico + forecast 2025.
         </small>
+       -->
       </div>
     </section>
 
@@ -95,10 +113,20 @@
         <h2>Resultados históricos</h2>
         <div class="pill" id="rCount">0</div>
       </div>
+
       <table class="table" id="tblResults">
         <thead>
           <tr>
-            <th>Temporada</th><th>Carrera</th><th>Pos</th><th>Piloto</th><th>Escudería</th><th>Puntos</th><th>Fecha</th>
+            <th>Temporada</th>
+            <th>Carrera</th>
+            <th>Posición</th>
+            <th>Posición parrila salida</th>
+            <th>Piloto</th>
+            <th>Escudería</th>
+            <th>Puntos</th>
+            <th>Vueltas</th>
+            <th>Tiempo de Carrera</th>
+            <th>Mejor tiempo</th>
           </tr>
         </thead>
         <tbody><!-- JS --></tbody>
@@ -106,31 +134,33 @@
     </section>
 
     <!-- Visualización -->
-    <section class="viz">
+    <section class="viz" style="display: none;">
       <div class="viz-head">
         <h2>Visualización de predicciones</h2>
         <div class="pill" id="vizTarget">—</div>
       </div>
+
       <div class="charts">
         <div class="chart">
           <h4>Historia vs Predicción de puntos por GP</h4>
           <canvas id="chartSeries" height="140"></canvas>
         </div>
+
         <div class="chart">
           <h4>Probabilidad de posición – Próximo GP filtrado</h4>
           <canvas id="chartProbs" height="140"></canvas>
         </div>
       </div>
-      <p class="note">Predicciones de ejemplo con bandas de confianza (P10–P90). Sustituye por tu modelo o API en <code>consultas.js</code>.</p>
     </section>
   </main>
 
   <footer class="site-footer">
-    <small>Hecho con ❤️ • UCompensar • Gráficas con Chart.js</small>
+    <small>Hecho con ❤️ • UCompensar</small>
   </footer>
 
   <!-- Chart.js CDN (para las gráficas) -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <script src="../JS/consultas.js"></script>
 </body>
+
 </html>
