@@ -185,7 +185,6 @@ function closeDetail() {
 /* ====== Export ====== */
 async function exportCSV() {
   const rows = await getFiltered();
-  console.log(rows);
 
   const dataToPrint = rows.map((item) => ({
     'Código': item.codigo,

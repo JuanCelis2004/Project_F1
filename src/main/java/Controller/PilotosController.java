@@ -23,7 +23,6 @@ import java.util.List;
  */
 @WebServlet(name = "PilotosController", urlPatterns = {"/PilotosController"})
 public class PilotosController extends HttpServlet {
-
   PilotoJpaController pilotoJpa = new PilotoJpaController();
 
   @Override

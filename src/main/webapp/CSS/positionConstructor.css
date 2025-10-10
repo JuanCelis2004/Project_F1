@@ -1,0 +1,245 @@
+:root {
+  --bg: #0b0f14;
+  --surface: #121923;
+  --card: #0f151f;
+  --text: #e9eef5;
+  --muted: #6b7a90;
+  --brand: #ff2a2a;
+  --brand2: #ff9a2a;
+  --ring: rgba(255, 42, 42, .25);
+}
+
+* {
+  box-sizing: border-box
+}
+
+html,
+body {
+  height: 100%
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: radial-gradient(1200px 800px at 20% -10%, #16202d 0%, var(--bg) 45%);
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 14px clamp(16px, 5vw, 40px);
+  background: rgba(11, 15, 20, .75);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, .06)
+}
+
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, var(--brand), var(--brand2));
+  border-radius: 12px;
+  box-shadow: 0 6px 18px var(--ring);
+  text-decoration: none
+}
+
+.logo svg {
+  width: 26px;
+  fill: #fff
+}
+
+.titles h1 {
+  margin: 0;
+  font-size: 1.2rem
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: .85rem
+}
+
+.main-nav {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap
+}
+
+.nav-link {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  padding: .5rem .75rem;
+  border-radius: 12px
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, .06)
+}
+
+.nav-link.is-active {
+  background: rgba(255, 42, 42, .12);
+  outline: 1px solid rgba(255, 42, 42, .25)
+}
+
+.theme-toggle {
+  border: 0;
+  background: var(--surface);
+  color: var(--text);
+  padding: .6rem .75rem;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .06)
+}
+
+.theme-toggle:hover {
+  filter: brightness(1.1)
+}
+
+.container {
+  padding: 24px clamp(16px, 5vw, 40px) 40px;
+  max-width: 1100px;
+  margin-inline: auto
+}
+
+/* Controls */
+.controls .filters {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 10px;
+  align-items: end
+}
+
+.field {
+  grid-column: span 3;
+  display: grid;
+  gap: 6px
+}
+
+.field span {
+  font-size: .85rem;
+  color: var(--muted)
+}
+
+.field input,
+.field select {
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, .08);
+  background: var(--card);
+  color: var(--text)
+}
+
+.field.actions {
+  display: flex;
+  gap: 8px
+}
+
+.btn {
+  padding: .6rem .9rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, .12);
+  cursor: pointer;
+  font-weight: 700
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, var(--brand), var(--brand2));
+  border: 0;
+  color: #fff;
+  box-shadow: 0 10px 24px var(--ring)
+}
+
+.btn.outline {
+  background: transparent;
+  color: var(--text)
+}
+
+.results-head {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px
+}
+
+.pill {
+  background: rgba(255, 255, 255, .08);
+  padding: .35rem .6rem;
+  border-radius: 999px;
+  font-weight: 700
+}
+
+/* Table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+  border-radius: 16px;
+  overflow: hidden;
+  outline: 1px solid rgba(255, 255, 255, .06)
+}
+
+.table th,
+.table td {
+  padding: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, .06);
+  text-align: left
+}
+
+.table tr:hover td {
+  background: rgba(255, 255, 255, .04)
+}
+
+.table td b {
+  font-weight: 800
+}
+
+/* Print */
+@media print {
+  body {
+    background: #fff;
+    color: #000
+  }
+
+  .site-header,
+  .btn,
+  .results-head {
+    display: none
+  }
+
+  .table {
+    outline: none
+  }
+}
+
+.site-footer {
+  padding: 20px;
+  text-align: center;
+  color: var(--muted)
+}
+
+/* Light theme */
+.light {
+  --bg: #f4f7fb;
+  --surface: #ffffff;
+  --card: #f4f6f9;
+  --text: #0c1118;
+  --muted: #5d6b7c
+}
+
+.light .nav-link.is-active {
+  background: rgba(255, 42, 42, .1);
+  outline: 1px solid rgba(255, 42, 42, .2)
+}
