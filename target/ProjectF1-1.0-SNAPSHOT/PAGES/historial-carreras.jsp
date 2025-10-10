@@ -63,7 +63,7 @@
             <option value="points_desc">Puntos (desc)</option>
             <option value="name_asc">Piloto (A–Z)</option>
             <option value="team_asc">Escudería (A–Z)</option>
-            <option value="date_desc">Fecha (reciente primero)</option>
+            <option value="bestTime_asc">Mejor tiempo (asc)</option>
           </select>
         </label>
         <div class="field actions">
@@ -71,11 +71,13 @@
           <button id="btnCSV" class="btn primary">Exportar CSV</button>
         </div>
       </div>
+       <!--
       <div class="hint">
         <small>
           Consejo: para ver **predicciones**, selecciona un <b>piloto</b> o una <b>escudería</b>.
           La tablita muestra históricos (2024/2025), las gráficas mezclan histórico + forecast 2025.
         </small>
+       -->
       </div>
     </section>
 
@@ -96,7 +98,8 @@
       <table class="table" id="tblResults">
         <thead>
           <tr>
-            <th>Temporada</th><th>Carrera</th><th>Pos</th><th>Piloto</th><th>Escudería</th><th>Puntos</th><th>Fecha</th>
+            <th>Temporada</th><th>Carrera</th><th>Posición</th><th>Posición parrila salida</th><th>Piloto</th><th>Escudería</th><th>Puntos</th><th>Vueltas</th><th>Tiempo de Carrera</th>
+            <th>Mejor tiempo</th>
           </tr>
         </thead>
         <tbody><!-- JS --></tbody>
@@ -104,7 +107,7 @@
     </section>
 
     <!-- Visualización -->
-    <section class="viz">
+    <section class="viz" style="display: none;">
       <div class="viz-head">
         <h2>Visualización de predicciones</h2>
         <div class="pill" id="vizTarget">—</div>
@@ -121,6 +124,7 @@
       </div>
       <p class="note">Predicciones de ejemplo con bandas de confianza (P10–P90). Sustituye por tu modelo o API en <code>consultas.js</code>.</p>
     </section>
+    
   </main>
 
   <footer class="site-footer">

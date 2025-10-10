@@ -45,12 +45,7 @@
         <input id="q" type="search" placeholder="Buscar por nombre o país..." autocomplete="off" />
       </div>
       <div class="filters-grid">
-        <label class="field">
-          <span>Continente</span>
-          <select id="continent">
-            <option value="all">Todos</option>
-          </select>
-        </label>
+        
 
         <label class="field">
           <span>País</span>
@@ -72,7 +67,7 @@
           <select id="sortBy">
             <option value="name_asc">Nombre (A–Z)</option>
             <option value="length_desc">Longitud (desc)</option>
-            <option value="laps_desc">Vueltas (desc)</option>
+            <option value="lat_desc">Latitud (desc)</option>
           </select>
         </label>
 
@@ -94,7 +89,7 @@
       <table id="tableView" class="table hidden">
         <thead>
           <tr>
-            <th>Circuito</th><th>País</th><th>Longitud</th><th>Vueltas</th><th>Primer GP</th><th>Récord</th><th></th>
+            <th>Circuito</th><th>País</th><th>Localidad</th><th>Longitud</th><th>Latitud</th><th></th>
           </tr>
         </thead>
         <tbody></tbody>

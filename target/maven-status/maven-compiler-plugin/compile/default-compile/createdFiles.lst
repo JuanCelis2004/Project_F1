@@ -1,4 +1,5 @@
 Model\Temporada_.class
+Controller\HistorialCarrerasController.class
 Persistence\HistorialCarreraJpaController.class
 Model\HistorialCarrera.class
 Model\Piloto_.class
@@ -11,6 +12,7 @@ Model\Temporada.class
 Model\Piloto.class
 Model\Escuderia.class
 Model\Circuito.class
+Controller\CircuitoController.class
 Persistence\CircuitoJpaController.class
 Persistence\TemporadaJpaController.class
 Model\PosicionConstructor_.class

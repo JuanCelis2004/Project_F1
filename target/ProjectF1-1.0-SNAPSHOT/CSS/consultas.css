@@ -9,6 +9,7 @@ body{
   background: radial-gradient(1200px 800px at 20% -10%, #16202d 0%, var(--bg) 45%);
 }
 
+
 /* Header */
 .site-header{position:sticky;top:0;z-index:10;display:grid;grid-template-columns:1fr auto auto;gap:1rem;align-items:center;
   padding:14px clamp(16px,5vw,40px);background:rgba(11,15,20,.75);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06)}
@@ -59,12 +60,18 @@ body{
 .chart{grid-column:span 6;background:var(--surface);border-radius:16px;outline:1px solid rgba(255,255,255,.06);padding:14px}
 .chart h4{margin:0 0 8px}
 .note{color:var(--muted);margin-top:8px}
+.viz {
+  display: none;
+}
 
 /* Responsive */
 @media (max-width:980px){
   .field{grid-column:span 6}
   .kpi{grid-column:span 6}
   .chart{grid-column:span 12}
+  .viz {
+  display: none;
+}
 }
 
 /* Tema claro */

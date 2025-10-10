@@ -64,7 +64,7 @@ h3{margin:0 0 10px}
 .recalc{display:flex;gap:10px;align-items:center;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);
   padding:10px 12px;border-radius:12px;margin-bottom:12px}
 .spinner{width:18px;height:18px;border:2px solid rgba(255,255,255,.25);border-top-color:#fff;border-radius:50%;animation:spin 1s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
+spin{to{transform:rotate(360deg)}}
 .toast{position:fixed;right:18px;bottom:18px;background:#0f151f;border:1px solid rgba(255,255,255,.12);padding:12px 14px;border-radius:12px;box-shadow:0 10px 24px rgba(0,0,0,.4)}
 .toast.success{outline:2px solid rgba(0,200,120,.35)}
 .toast.error{outline:2px solid rgba(255,80,80,.35)}
