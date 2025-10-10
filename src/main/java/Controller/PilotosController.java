@@ -29,6 +29,7 @@ public class PilotosController extends HttpServlet {
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     List<Piloto> listaPilotos = pilotoJpa.findPilotoEntities();
 
+    // Establecer el tipo de respuesta
     response.setContentType("application/json");
     response.setCharacterEncoding("UTF-8");
 
@@ -37,6 +38,7 @@ public class PilotosController extends HttpServlet {
             .setDateFormat("yyyy-MM-dd")
             .create();
 
+    // Transformar la info que retorna el JAP a formato JSON
     String jsonPilotos = gson.toJson(listaPilotos);
 
     try (PrintWriter out = response.getWriter()) {

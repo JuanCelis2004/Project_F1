@@ -29,6 +29,7 @@ public class PositionConstructorController extends HttpServlet {
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     List<PosicionConstructor> listaPosiciones = posicionResultadoJpa.findPosicionConstructorEntities();
     
+    // Establecer el tipo de respuesta
     response.setContentType("application/json");
     response.setCharacterEncoding("UTF-8");
     
@@ -37,10 +38,11 @@ public class PositionConstructorController extends HttpServlet {
             .setDateFormat("yyyy-MM-dd")
             .create();
     
-    String jsonEscuderias = gson.toJson(listaPosiciones);
+    // Transformar la info que retorna el JAP a formato JSON
+    String jsonPosiciones = gson.toJson(listaPosiciones);
     
     try (PrintWriter out = response.getWriter()) {
-      out.print(jsonEscuderias);
+      out.print(jsonPosiciones);
       out.flush();
     }
   }

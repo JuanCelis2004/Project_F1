@@ -1,4 +1,4 @@
-// Init
+/* ====== Init ====== */
 document.addEventListener("DOMContentLoaded", () => {
   const saved = localStorage.getItem("theme");
   if (saved === "light") document.body.classList.add("light");
@@ -6,10 +6,12 @@ document.addEventListener("DOMContentLoaded", () => {
   bind();
 });
 
-const $ = (s) => document.querySelector(s);
+/* ====== Estado de los campos de filtrado ====== */
 const state = { q: "", sort: "pos_asc", season: "2024" };
 
-// Consultar info de los escuderias
+const $ = (s) => document.querySelector(s);
+
+/* ====== Consultar info de la posición de los constructores ====== */
 async function getPosicionConstructors() {
   const url = "http://localhost:8080/ProjectF1/PositionConstructorController";
   const resp = await fetch(url);
@@ -83,6 +85,7 @@ async function render() {
   });
 }
 
+/* ========= Manejador de eventos ========= */
 function bind() {
   $("#themeToggle").addEventListener("click", () => {
     document.body.classList.toggle("light");

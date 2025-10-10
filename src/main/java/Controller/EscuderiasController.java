@@ -29,6 +29,7 @@ public class EscuderiasController extends HttpServlet {
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     List<Escuderia> listaEscuderias = escuderiaJpa.findEscuderiaEntities();
     
+    // Establecer el tipo de respuesta
     response.setContentType("application/json");
     response.setCharacterEncoding("UTF-8");
     
@@ -37,6 +38,7 @@ public class EscuderiasController extends HttpServlet {
             .setDateFormat("yyyy-MM-dd")
             .create();
     
+    // Transformar la info que retorna el JAP a formato JSON
     String jsonEscuderias = gson.toJson(listaEscuderias);
     
     try (PrintWriter out = response.getWriter()) {

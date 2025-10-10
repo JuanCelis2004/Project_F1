@@ -6,7 +6,15 @@ document.addEventListener("DOMContentLoaded", () => {
   bindEvents();
 });
 
-// Consultar info de los escuderias
+/* ====== Estado de los campos de filtrado ====== */
+const state = {
+  q: "",
+  season: "2024",
+  country: "all",
+  powerUnit: "all",
+};
+
+/* ====== Consultar info de las escuderías ====== */
 async function getConstructors() {
   const url = "http://localhost:8080/ProjectF1/EscuderiasController";
   const resp = await fetch(url);
@@ -41,14 +49,6 @@ async function byId(id) {
   return dataConstructors.find((t) => t.idEscuderia === parseInt(id));
 }
 
-/* ====== Estado ====== */
-const state = {
-  q: "",
-  season: "2024",
-  country: "all",
-  powerUnit: "all",
-};
-
 /* ====== Filtros ====== */
 async function initFilters() {
   const dataConstructors = await getConstructors();
@@ -65,7 +65,7 @@ async function initFilters() {
   });
 }
 
-/* ====== Query ====== */
+/* ====== Filtrar la información a mostrar ====== */
 async function getFiltered() {
   const { q, season, powerUnit, sortBy } = state;
 
@@ -91,7 +91,7 @@ async function getFiltered() {
   return rows;
 }
 
-/* ====== Render ====== */
+/* ====== Renderizar la tabla ====== */
 async function renderList() {
   const rows = await getFiltered();
 
@@ -117,7 +117,7 @@ async function renderList() {
   });
 }
 
-/* ====== Detalle ====== */
+/* ====== Mostrar el detalle ====== */
 async function openDetail(id) {
   const t = await byId(id);
 
@@ -151,7 +151,6 @@ function closeDetail() {
   }
 }
 
-/* ====== Export ====== */
 async function exportCSV() {
   const rows = await getFiltered();
 
@@ -189,7 +188,7 @@ function toggleTheme() {
   );
 }
 
-/* ====== Eventos / Init ====== */
+/* ========= Manejador de eventos ========= */
 function bindEvents() {
   $("#q").addEventListener("input", (e) => {
     state.q = e.target.value;
