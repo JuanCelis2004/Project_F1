@@ -1,6 +1,5 @@
 /* ====== Init ====== */
 document.addEventListener("DOMContentLoaded", async () => {
-  loadTheme();
   initFilters();
   renderList();
   bindEvents();
@@ -208,19 +207,6 @@ async function exportCSV() {
   URL.revokeObjectURL(url);
 }
 
-/* ====== Tema ====== */
-function loadTheme() {
-  const saved = localStorage.getItem("theme");
-  if (saved === "light") {
-    document.body.classList.add("light");
-  }
-}
-
-function toggleTheme() {
-  document.body.classList.toggle("light");
-  localStorage.setItem("theme", document.body.classList.contains("light") ? "light" : "dark");
-}
-
 /* ========= Manejador de eventos ========= */
 function bindEvents() {
   $("#q").addEventListener("input", (e) => {
@@ -267,7 +253,6 @@ function bindEvents() {
   });
 
   $("#exportBtn").addEventListener("click", exportCSV);
-  $("#themeToggle").addEventListener("click", toggleTheme);
   $("#closeDetail").addEventListener("click", closeDetail);
 
   // Delegación para botones de cada tarjeta

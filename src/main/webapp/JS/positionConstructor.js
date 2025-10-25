@@ -18,8 +18,6 @@ async function getPosicionConstructors() {
 
   const dataPositions = await resp.json();
 
-  console.log(dataPositions);
-
   return dataPositions;
 }
 
@@ -87,11 +85,6 @@ async function render() {
 
 /* ========= Manejador de eventos ========= */
 function bind() {
-  $("#themeToggle").addEventListener("click", () => {
-    document.body.classList.toggle("light");
-    localStorage.setItem("theme", document.body.classList.contains("light") ? "light" : "dark");
-  });
-
   $("#q").addEventListener("input", (e) => {
     state.q = e.target.value;
     render();

@@ -7,7 +7,6 @@ Persistence\exceptions\IllegalOrphanException.class
 Persistence\exceptions\NonexistentEntityException.class
 Persistence\PosicionConstructorJpaController.class
 Controller\PilotosController.class
-Controller\TemporadaController.class
 Model\Temporada.class
 Model\Piloto.class
 Model\Escuderia.class

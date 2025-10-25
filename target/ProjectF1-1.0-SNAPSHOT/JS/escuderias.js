@@ -1,12 +1,19 @@
 /* ====== Init ====== */
 document.addEventListener("DOMContentLoaded", () => {
-  loadTheme();
   initFilters();
   renderList();
   bindEvents();
 });
 
-// Consultar info de los escuderias
+/* ====== Estado de los campos de filtrado ====== */
+const state = {
+  q: "",
+  season: "2024",
+  country: "all",
+  powerUnit: "all",
+};
+
+/* ====== Consultar info de las escuderías ====== */
 async function getConstructors() {
   const url = "http://localhost:8080/ProjectF1/EscuderiasController";
   const resp = await fetch(url);
@@ -41,14 +48,6 @@ async function byId(id) {
   return dataConstructors.find((t) => t.idEscuderia === parseInt(id));
 }
 
-/* ====== Estado ====== */
-const state = {
-  q: "",
-  season: "2024",
-  country: "all",
-  powerUnit: "all",
-};
-
 /* ====== Filtros ====== */
 async function initFilters() {
   const dataConstructors = await getConstructors();
@@ -65,7 +64,7 @@ async function initFilters() {
   });
 }
 
-/* ====== Query ====== */
+/* ====== Filtrar la información a mostrar ====== */
 async function getFiltered() {
   const { q, season, powerUnit, sortBy } = state;
 
@@ -91,7 +90,7 @@ async function getFiltered() {
   return rows;
 }
 
-/* ====== Render ====== */
+/* ====== Renderizar la tabla ====== */
 async function renderList() {
   const rows = await getFiltered();
 
@@ -117,7 +116,7 @@ async function renderList() {
   });
 }
 
-/* ====== Detalle ====== */
+/* ====== Mostrar el detalle ====== */
 async function openDetail(id) {
   const t = await byId(id);
 
@@ -151,7 +150,6 @@ function closeDetail() {
   }
 }
 
-/* ====== Export ====== */
 async function exportCSV() {
   const rows = await getFiltered();
 
@@ -175,21 +173,7 @@ async function exportCSV() {
   URL.revokeObjectURL(url);
 }
 
-/* ====== Tema ====== */
-function loadTheme() {
-  const saved = localStorage.getItem("theme");
-  if (saved === "light") document.body.classList.add("light");
-}
-
-function toggleTheme() {
-  document.body.classList.toggle("light");
-  localStorage.setItem(
-    "theme",
-    document.body.classList.contains("light") ? "light" : "dark"
-  );
-}
-
-/* ====== Eventos / Init ====== */
+/* ========= Manejador de eventos ========= */
 function bindEvents() {
   $("#q").addEventListener("input", (e) => {
     state.q = e.target.value;
@@ -223,8 +207,6 @@ function bindEvents() {
     const btn = e.target.closest("[data-open]");
     if (btn) openDetail(btn.dataset.open);
   });
-
-  $("#themeToggle").addEventListener("click", toggleTheme);
 
   $("#closeDetail").addEventListener("click", closeDetail);
 

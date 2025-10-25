@@ -40,9 +40,8 @@
       <a href="./circuitos.jsp" class="nav-link is-active">Circuitos</a>
       <a href="./posicionConstructor.jsp" class="nav-link">Posicion constructor</a>
       <a href="./historial-carreras.jsp" class="nav-link">Historial de carreras</a>
+      <a href="./addResult.jsp" class="nav-link">Añadir resultado</a>
     </nav>
-
-    <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema">🌓</button>
   </header>
 
   <main class="container">
@@ -64,7 +63,7 @@
           <span>Vista</span>
           <select id="viewMode">
             <option value="cards">Tarjetas</option>
-            <option value="table">Tabla</option>
+            <option value="table" selected>Tabla</option>
           </select>
         </label>
 

@@ -186,22 +186,9 @@ function startCountdown(isoDate){
   cdTimer = setInterval(update, 1000);
 }
 
-/* ====== Tema (oscuro/claro) ====== */
-const themeToggle = $("#themeToggle");
-function loadTheme(){
-  const saved = localStorage.getItem("theme");
-  if(saved === "light"){ document.body.classList.add("light"); }
-}
-function toggleTheme(){
-  document.body.classList.toggle("light");
-  localStorage.setItem("theme", document.body.classList.contains("light") ? "light" : "dark");
-}
-
 /* ====== Init ====== */
 document.addEventListener("DOMContentLoaded", () => {
-  loadTheme();
   renderNextGp();
   renderUpcoming();
   renderStandingsTop3();
-  themeToggle.addEventListener("click", toggleTheme);
 });

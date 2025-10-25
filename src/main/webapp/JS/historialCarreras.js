@@ -373,11 +373,6 @@ function renderCharts() {
 
 /* ========= Manejador de eventos ========= */
 function bindEvents() {
-  $("#themeToggle").addEventListener("click", () => {
-    document.body.classList.toggle("light");
-    localStorage.setItem("theme", document.body.classList.contains("light") ? "light" : "dark");
-  });
-
   $("#season").addEventListener("change", (e) => {
     state.season = e.target.value;
     renderTable();

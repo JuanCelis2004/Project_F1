@@ -10,6 +10,15 @@ document.addEventListener("DOMContentLoaded", () => {
   bindEvents();
 });
 
+/* ====== Estado de los campos de filtrado ====== */
+const state = {
+  season: "2024",
+  race: "all",
+  driver: "all",
+  team: "all",
+  sort: "pos_asc",
+};
+
 /* ====== Consultar info del historia de carreras ====== */
 async function getHistorialCarreras() {
   const url = "http://localhost:8080/ProjectF1/HistorialCarrerasController";
@@ -65,15 +74,6 @@ function formatRowsForCSV(rows) {
     Puntos: r.puntos,
   }));
 }
-
-/* ========= Estado ========= */
-const state = {
-  season: "2024",
-  race: "all",
-  driver: "all",
-  team: "all",
-  sort: "pos_asc",
-};
 
 /* ========= Cargar filtros ========= */
 async function initFilters() {
@@ -371,13 +371,8 @@ function renderCharts() {
   });
 }
 
-/* ========= Eventos ========= */
+/* ========= Manejador de eventos ========= */
 function bindEvents() {
-  $("#themeToggle").addEventListener("click", () => {
-    document.body.classList.toggle("light");
-    localStorage.setItem("theme", document.body.classList.contains("light") ? "light" : "dark");
-  });
-
   $("#season").addEventListener("change", (e) => {
     state.season = e.target.value;
     renderTable();
