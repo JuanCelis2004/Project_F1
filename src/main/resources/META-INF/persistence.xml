@@ -9,6 +9,7 @@
     <class>Model.Carrera</class>
     <class>Model.HistorialCarrera</class>
     <class>Model.PosicionConstructor</class>
+    <class>Model.FechaCongelacion</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/f1_db?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
