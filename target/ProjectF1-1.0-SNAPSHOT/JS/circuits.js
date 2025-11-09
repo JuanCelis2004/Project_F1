@@ -161,31 +161,6 @@ async function render() {
   else await renderTable();
 }
 
-/* ====== Detalle 
- function renderLastTop10(c) {
- const tb = $("#tblLast tbody");
- tb.innerHTML = "";
- (c.lastTop10 || []).forEach((r) => {
- const tr = document.createElement("tr");
- tr.innerHTML = `<td>${r.pos}</td><td>${r.driver}</td><td>${
- r.team
- }</td><td>${r.pts}</td><td>${fdate(c.lastResultDate)}</td>`;
- tb.appendChild(tr);
- });
- }
- 
- 
- function renderRecords(c) {
- const tb = $("#tblRecords tbody");
- tb.innerHTML = "";
- (c.recordTable || []).forEach((r) => {
- const tr = document.createElement("tr");
- tr.innerHTML = `<td>${r.type}</td><td>${r.mark}</td><td>${r.driver}</td><td>${r.team}</td><td>${r.year}</td>`;
- tb.appendChild(tr);
- });
- }
- ====== */
-
 async function openDetail(id) {
   const c = await byId(id);
 
@@ -212,7 +187,6 @@ function closeDetail() {
     history.replaceState(null, "", location.pathname);
   }
 }
-
 
 /* ====== Tabs ====== */
 function setActiveTab(key) {

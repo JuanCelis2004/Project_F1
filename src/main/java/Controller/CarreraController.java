@@ -24,54 +24,36 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "CarreraController", urlPatterns = {"/CarreraController"})
 public class CarreraController extends HttpServlet {
-    
-        CarreraJpaController carreraJpa = new CarreraJpaController();
 
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+  CarreraJpaController carreraJpa = new CarreraJpaController();
 
+  @Override
+  protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+    List<Carrera> carreras = carreraJpa.findCarreraEntities();
+
+    // Filtrar solo las de temporada 2025
+    List<Carrera> carreras2025 = carreras.stream()
+            .filter(c -> c.getTemporada() != null && c.getTemporada().getAnio() == 2025)
+            .collect(Collectors.toList());
+
+    response.setContentType("application/json");
+    response.setCharacterEncoding("UTF-8");
+
+    Gson gson = new GsonBuilder()
+            .excludeFieldsWithoutExposeAnnotation()
+            .setDateFormat("yyyy-MM-dd")
+            .create();
+
+    String json = gson.toJson(carreras2025);
+
+    try (PrintWriter out = response.getWriter()) {
+      out.print(json);
     }
+  }
 
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        
-        List<Carrera> carreras = carreraJpa.findCarreraEntities();
-
-        // Filtrar solo las de temporada 2025
-        List<Carrera> carreras2025 = carreras.stream()
-                .filter(c -> c.getTemporada() != null && c.getTemporada().getAnio() == 2025)
-                .collect(Collectors.toList());
-
-        response.setContentType("application/json");
-        response.setCharacterEncoding("UTF-8");
-
-        Gson gson = new GsonBuilder()
-                .excludeFieldsWithoutExposeAnnotation()
-                .setDateFormat("yyyy-MM-dd")
-                .create();
-
-        String json = gson.toJson(carreras2025);
-
-        try (PrintWriter out = response.getWriter()) {
-            out.print(json);
-        }
-    }
-
-        
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
-
-
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
-
+  @Override
+  protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    // 
+  }
 }

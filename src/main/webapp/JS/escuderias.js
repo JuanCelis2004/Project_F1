@@ -129,15 +129,6 @@ async function openDetail(id) {
   $("#tBase").textContent = t.base;
   $("#tUnitPower").textContent = t.unidad_potencia;
 
-  // const ul = $("#tDrivers");
-
-  // ul.innerHTML = "";
-  // (t.drivers || []).forEach((d) => {
-  //   const li = document.createElement("li");
-  //   li.textContent = d;
-  //   ul.appendChild(li);
-  // });
-
   history.replaceState(null, "", `#team=${encodeURIComponent(t.idEscuderia)}`);
   $("#detailPanel").classList.add("open");
 }
