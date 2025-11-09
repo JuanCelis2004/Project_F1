@@ -120,8 +120,6 @@ function bind() {
       Victorias: item.victorias
     }));
 
-    console.log(dataToPrint);
-
     const csv = toCSV(dataToPrint);
     const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
     const url = URL.createObjectURL(blob);

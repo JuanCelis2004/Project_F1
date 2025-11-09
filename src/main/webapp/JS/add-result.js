@@ -54,14 +54,15 @@ async function getTeams() {
 
 /* ====== Consultar info de los circuitos para crear selectores ====== */
 async function getCircuits() {
-  const url = "http://localhost:8080/ProjectF1/CircuitoController";
+  const url = "http://localhost:8080/ProjectF1/CarreraController";
   const resp = await fetch(url);
+  const dataCarreras = await resp.json();
 
-  const dataCircuits = await resp.json();
+  const carreras2025 = dataCarreras.filter(c => c.temporada?.anio === 2025);
 
-  let formatData = dataCircuits.map((team) => ({
-    ...team,
-    id: team.idCircuito
+  const formatData = carreras2025.map(c => ({
+    id: c.idCarrera,
+    nombre: c.circuito.nombre
   }));
 
   createOptions("raceCircuit", formatData);
@@ -199,8 +200,6 @@ function handleDriverInput() {
 
   const teamToTeamSelect = dataDrivers.find((item) => item.idPiloto === driver);
 
-  console.log(teamToTeamSelect);
-
   $("#team").value = teamToTeamSelect.escuderia.idEscuderia;
 }
 
@@ -314,7 +313,7 @@ function bind() {
   $("#raceTime").addEventListener("change", handleRaceTimeInput);
   $("#bestLap").addEventListener("change", handleBestLapInput);
 
-  $("#saveBtn").addEventListener("click", () => {
+  $("#saveBtn").addEventListener("click", async () => {
     if (!validForm()) return;
 
     const season = document.getElementById("seasonInput");
@@ -329,28 +328,45 @@ function bind() {
     const raceTime = document.getElementById("raceTime");
     const bestLap = document.getElementById("bestLap");
 
-    console.log({
-      season: season.value,
-      race: raceCircuit.value,
-      raceDate: raceDate.value,
-      position: position.value,
-      gridPosition: gridPosition.value,
-      driver: parseInt(driver.value),
-      team: parseInt(team.value),
-      points: points.value,
-      laps: laps.value,
-      raceTime: raceTime.value,
-      bestLap: bestLap.value
-    });
+    const body = {
+      carrera: { idCarrera: parseInt(raceCircuit.value) },
+      piloto: { idPiloto: parseInt(driver.value) },
+      posicion: parseInt(position.value),
+      posicionParrillaSalida: parseInt(gridPosition.value),
+      vueltas: parseInt(laps.value),
+      tiempoCarrera: raceTime.value,
+      puntos: parseFloat(points.value),
+      mejorTiempo: bestLap.value
+    };
+
+    console.log("Datos a enviar:", body);
 
     if (!canSaveResult(raceDate.value)) {
       toast("La fecha de la carrera no puede ser anterior a la fecha de congelación", "error");
 
       return;
     }
+    
 
     // Guardar info
-    //
+    try {
+      const resp = await fetch("http://localhost:8080/ProjectF1/HistorialCarrerasController", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(body)
+      });
+
+      if (resp.ok) {
+        toast("Historial guardado correctamente ✅");
+      } else {
+        toast("Error al guardar el historial ❌", "error");
+      }
+    } catch (err) {
+      console.error(err);
+      toast("Error de conexión con el servidor", "error");
+    }
 
     // Limpiar formulario
     season.value = "2025";
