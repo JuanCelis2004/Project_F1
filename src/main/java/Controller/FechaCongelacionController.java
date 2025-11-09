@@ -23,21 +23,14 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "FechaCongelacionController", urlPatterns = {"/FechaCongelacionController"})
 public class FechaCongelacionController extends HttpServlet {
-    
-    FechaCongelacionJpaController FechaCongeJpa = new FechaCongelacionJpaController();
 
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        
-    }
+  FechaCongelacionJpaController FechaCongeJpa = new FechaCongelacionJpaController();
 
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        
-        List<FechaCongelacion> listaFechas = FechaCongeJpa.findFechaCongelacionEntities();
-        
-        response.setContentType("application/json");
+  @Override
+  protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    List<FechaCongelacion> listaFechas = FechaCongeJpa.findFechaCongelacionEntities();
+
+    response.setContentType("application/json");
     response.setCharacterEncoding("UTF-8");
 
     Gson gson = new GsonBuilder()
@@ -52,18 +45,5 @@ public class FechaCongelacionController extends HttpServlet {
       out.print(jsonPilotos);
       out.flush();
     }
-        
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
-
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
-
+  }
 }

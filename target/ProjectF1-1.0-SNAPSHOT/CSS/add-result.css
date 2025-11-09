@@ -246,11 +246,15 @@ body {
 }
 
 .toast.success {
-  outline: 2px solid rgba(0, 200, 120, .35)
+  outline: 2px solid rgba(0, 200, 120, .35);
 }
 
 .toast.error {
-  outline: 2px solid rgba(255, 80, 80, .35)
+  outline: 2px solid rgba(255, 80, 80, .35);
+}
+
+.toast.warning {
+  outline: 2px solid rgba(255, 159, 0, 0.35);
 }
 
 .hidden {

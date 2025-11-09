@@ -46,31 +46,7 @@
   </header>
 
   <main class="container">
-    <!-- Controles RF-07 -->
-    <section class="card">
-      <div class="controls">
-        <label class="field">
-          <span>Fecha de congelación</span>
-          <input id="freezeDate" type="date" />
-        </label>
-
-        <div class="status">
-          <span>Estado:</span>
-          <b id="compliance">Define una fecha</b>
-        </div>
-
-        <div class="actions">
-          <button id="printBtn" class="btn primary">Imprimir</button>
-        </div>
-      </div>
-
-      <small class="hint">
-        Cambia la fecha de congelación para probar la regla. El botón <b>Guardar</b> se habilita solo si la fecha de la
-        carrera es posterior.
-      </small>
-    </section>
-
-    <!-- Formulario (sin tabla) -->
+    <!-- Formulario -->
     <section class="card">
       <h2>Formulario de ingreso</h2>
       <form id="formResult" class="form-grid">
@@ -83,6 +59,7 @@
             min="2025"
             max="2025"
             value="2025"
+            disabled
             required
           />
         </label>
@@ -133,7 +110,7 @@
 
         <label class="field">
           <span>Escudería</span>
-          <select name="team" id="team" required></select>
+          <select name="team" id="team" disabled required></select>
         </label>
 
         <label class="field">
@@ -155,7 +132,7 @@
             name="laps"
             id="laps"
             type="number"
-            min="0"
+            min="1"
             max="78"
             required
           />
@@ -167,7 +144,7 @@
             name="raceTime"
             id="raceTime"
             type="text"
-            placeholder="01:32:14.824"
+            placeholder="Ejm: 01:32:14.824"
             required
           />
         </label>
@@ -178,13 +155,13 @@
             name="bestLap"
             id="bestLap"
             type="text"
-            placeholder="01:20.123"
+            placeholder="Ejm: 01:20.123"
             required
           />
         </label>
 
         <div class="gate">
-          <span>¿Permite ingreso según RF-07?</span>
+          <span>Fecha de congelación <span id="frozenDate"></span></span>
           <b id="gateState">—</b>
         </div>
 

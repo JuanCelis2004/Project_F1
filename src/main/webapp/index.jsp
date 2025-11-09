@@ -40,7 +40,7 @@
       <a href="./PAGES/circuitos.jsp" class="nav-link">Circuitos</a>
       <a href="./PAGES/posicionConstructor.jsp" class="nav-link">Posicion constructor</a>
       <a href="./PAGES/historial-carreras.jsp" class="nav-link">Historial de carreras</a>
-      <a href="./PAGES/fechaCongelacion.jsp" class="nav-link">Añadir resultado</a>
+      <a href="./PAGES/addResult.jsp" class="nav-link">Añadir resultado</a>
     </nav>
 
     <!-- <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema">🌓</button> -->
