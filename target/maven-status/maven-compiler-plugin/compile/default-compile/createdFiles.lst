@@ -22,6 +22,7 @@ Persistence\exceptions\PreexistingEntityException.class
 Persistence\PilotoJpaController.class
 Persistence\EscuderiaJpaController.class
 Model\Escuderia_.class
+Controller\CarreraController.class
 Model\Carrera_.class
 Model\Carrera.class
 Controller\PositionConstructorController.class
