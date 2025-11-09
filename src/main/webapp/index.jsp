@@ -7,6 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es-CO">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -18,11 +19,11 @@
 
   <link rel="stylesheet" href="./CSS/style.css" />
 </head>
+
 <body>
   <header class="site-header">
     <div class="brand">
       <div class="logo">
-        <!-- Mini logo SVG (ligero y escalable) -->
         <svg viewBox="0 0 64 64" aria-hidden="true">
           <path d="M6 40h26l8-16h18l-8 16h-8l-8 16H8z" />
         </svg>
@@ -47,69 +48,8 @@
   </header>
 
   <main class="container">
-    <!-- Próximo GP / Hero -->
-    <section class="hero" id="nextGP" aria-live="polite">
-      <div class="hero-left">
-        <h2>Próximo Gran Premio</h2>
-        <p class="gp-title" id="nextGpTitle">Cargando…</p>
-        <p class="gp-meta" id="nextGpMeta">—</p>
-        <div class="countdown" id="countdown">
-          <div class="cd-item"><span id="cdDays">--</span><label>Días</label></div>
-          <div class="cd-item"><span id="cdHours">--</span><label>Horas</label></div>
-          <div class="cd-item"><span id="cdMinutes">--</span><label>Min</label></div>
-          <div class="cd-item"><span id="cdSeconds">--</span><label>Seg</label></div>
-        </div>
-        <!-- <a href="#calendar" class="btn btn-primary">Ver calendario</a> -->
-      </div>
-      <div class="hero-right">
-        <div class="hero-card">
-          <h3>Pista</h3>
-          <p id="nextGpCircuit">—</p>
-          <div class="tag" id="nextGpFlag">🏁</div>
-        </div>
-        <div class="hero-card">
-          <h3>Sesión</h3>
-          <ul class="session-list" id="nextGpSessions">
-            <!-- Se completa por JS -->
-          </ul>
-        </div>
-      </div>
-    </section>
-
     <!-- Grid Resumen -->
     <section class="grid">
-      <!-- Próximos GP -->
-      <article class="card" id="calendar">
-        <div class="card-header">
-          <h3>Próximos GP</h3>
-        </div>
-        <ul class="list" id="upcomingGps">
-          <!-- JS -->
-        </ul>
-      </article>
-
-      <!-- Top 3 Pilotos -->
-      <article class="card" id="drivers">
-        <div class="card-header">
-          <h3>Top 3 Pilotos</h3>
-          <a href="./PAGES/pilotos.jsp" class="link">Ver más →</a>
-        </div>
-        <div class="standings" id="topDrivers">
-          <!-- JS -->
-        </div>
-      </article>
-
-      <!-- Top 3 Constructores -->
-      <article class="card" id="constructors">
-        <div class="card-header">
-          <h3>Top 3 Constructores</h3>
-          <a href="./PAGES/posicionConstructor.jsp" class="link">Ver clasificación →</a>
-        </div>
-        <div class="standings" id="topConstructors">
-          <!-- JS -->
-        </div>
-      </article>
-
       <!-- Accesos rápidos -->
       <article class="card quick-links">
         <div class="card-header">
@@ -133,6 +73,28 @@
           </a>
         </div>
       </article>
+
+      <!-- Top 3 Pilotos -->
+      <article class="card" id="drivers">
+        <div class="card-header">
+          <h3>Top 3 Pilotos</h3>
+          <a href="./PAGES/pilotos.jsp" class="link">Ver más →</a>
+        </div>
+        <div class="standings" id="topDrivers">
+          <!-- JS -->
+        </div>
+      </article>
+
+      <!-- Top 3 Constructores -->
+      <article class="card" id="constructors">
+        <div class="card-header">
+          <h3>Top 3 Constructores</h3>
+          <a href="./PAGES/posicionConstructor.jsp" class="link">Ver clasificación →</a>
+        </div>
+        <div class="standings" id="topConstructors">
+          <!-- JS -->
+        </div>
+      </article>
     </section>
   </main>
 
@@ -142,5 +104,5 @@
 
   <script src="JS/app.js"></script>
 </body>
-</html>
 
+</html>

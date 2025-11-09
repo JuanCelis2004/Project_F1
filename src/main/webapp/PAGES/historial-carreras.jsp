@@ -30,7 +30,6 @@
 
       <div class="titles">
         <h1>Historial de carreras</h1>
-        <p class="subtitle">CU6 – Filtros por carrera, piloto, escudería • Históricos & Predicciones</p>
       </div>
     </div>
 

@@ -29,7 +29,6 @@
       </a>
       <div class="titles">
         <h1>Circuitos</h1>
-        <p class="subtitle">CU3 – Listar circuitos</p>
       </div>
     </div>
 

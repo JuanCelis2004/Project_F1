@@ -75,6 +75,7 @@
             name="date"
             id="raceDate"
             type="date"
+            max="2025-12-31"
             required
           />
         </label>

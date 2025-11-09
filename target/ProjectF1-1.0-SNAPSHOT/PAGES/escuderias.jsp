@@ -30,7 +30,6 @@
 
       <div class="titles">
         <h1>Escuderías</h1>
-        <p class="subtitle">CU2 – Consultar escuderías (2024/2025)</p>
       </div>
     </div>
 

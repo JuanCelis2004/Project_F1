@@ -29,7 +29,6 @@
       </a>
       <div class="titles">
         <h1>Pilotos</h1>
-        <p class="subtitle">CU1 – Consultar pilotos (2024/2025)</p>
       </div>
     </div>
 

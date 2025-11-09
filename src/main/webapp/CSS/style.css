@@ -356,20 +356,6 @@ body {
   }
 }
 
-@media (min-width: 900px) {
-  #calendar {
-    grid-column: span 6
-  }
-
-  #drivers {
-    grid-column: span 3
-  }
-
-  #constructors {
-    grid-column: span 3
-  }
-}
-
 /* Tema claro opcional */
 .light {
   --bg: #f4f7fb;

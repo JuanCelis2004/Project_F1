@@ -29,7 +29,6 @@
       </a>
       <div class="titles">
         <h1>Posición de constructores</h1>
-        <p class="subtitle">Tabla con puntos y victorias</p>
       </div>
     </div>
 
